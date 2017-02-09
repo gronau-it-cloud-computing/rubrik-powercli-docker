@@ -3,6 +3,10 @@ MAINTAINER Ed Morgan <ed@edmorgan.info>
 
 WORKDIR /powershell
 
+# Start with a fresh /powershell folder
+RUN rm -rf /powershell
+RUN mkdir /powershell
+
 # Install Rubrik PowerShell module and clean up
 ADD https://github.com/mo6020/PowerShell-Module/archive/macOS.zip /powershell
 RUN mkdir ~/.local/share/powershell/Modules/Rubrik
